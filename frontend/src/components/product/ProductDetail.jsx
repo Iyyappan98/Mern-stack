@@ -58,7 +58,7 @@ const ProductDetail = () => {
 
 
     useEffect(() => {
-        if (isReviewSubmited) {
+        if (id !== product._id || isReviewSubmited) {
             handleClose();
             toast.success('Review Submited Successfully', {
                 position: 'bottom-center',
@@ -79,7 +79,7 @@ const ProductDetail = () => {
             dispatch(clearProduct())
         }
 
-    }, [dispatch, id, isReviewSubmited, error])
+    }, [dispatch, id, isReviewSubmited, error, product._id])
     return (
         <>
             {loading ? <Loader /> :

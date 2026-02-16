@@ -54,7 +54,7 @@ const Payment = () => {
       })
       return
     }
-  }, [])
+  }, [shippingInfo, navigate, orderError])
 
   const submitHandler = async (e) => {
     e.preventDefault();
