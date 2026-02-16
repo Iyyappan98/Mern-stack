@@ -36,10 +36,10 @@ const navigate =  useNavigate();
                     <figure className='avatar avatar-nav'>
                         <Image width="50px" src={user?.avatar ?? '/images/default_avatar.png'}/>
                     </figure>
-                    <span>{user.name}</span>
+                    <span>{user?.name}</span>
               </Dropdown.Toggle>
               <Dropdown.Menu>
-               {user.role === "admin" && <Dropdown.Item className='text-dark' onClick={()=>{navigate('admin/dashboard')}}>Dashboard</Dropdown.Item>} 
+               {user?.role === "admin" && <Dropdown.Item className='text-dark' onClick={()=>{navigate('admin/dashboard')}}>Dashboard</Dropdown.Item>} 
                 <Dropdown.Item className='text-dark' onClick={()=>{navigate('/myprofile')}}>Profile</Dropdown.Item>
                 <Dropdown.Item className='text-dark' onClick={()=>{navigate('/orders')}}>Orders</Dropdown.Item>
                 <Dropdown.Item className='text-danger' onClick={logoutHandler}>Logout</Dropdown.Item>
