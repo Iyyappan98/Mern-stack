@@ -33,7 +33,7 @@ const Login = () => {
           return
         }   
         
-      }, [error, isAuthenticated, navigate, redirect])
+      }, [error,isAuthenticated, navigate])
 
 
   return (

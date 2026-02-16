@@ -28,7 +28,7 @@ const Shipping = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // const countryList = Object.values(countries);
+    const countryList = Object.values(countries);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -75,7 +75,7 @@ const Shipping = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="phone_field">Phone No</label>
+                            <label htmlhtmlFor="phone_field">Phone No</label>
                             <input
                                 type="phone"
                                 id="phone_field"
