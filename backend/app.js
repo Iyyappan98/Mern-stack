@@ -5,10 +5,16 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const dontenv = require('dotenv');
 dontenv.config({path: "config/config.env"});
+const cors = require('cors');
 
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
+
+app.use(cors({
+  origin: 'https://mern-stack-5oki.vercel.app', // your frontend URL
+  credentials: true // allow cookies if using sessions/auth
+}));
 
 const products = require('./routes/product');
 const auth = require('./routes/auth');
