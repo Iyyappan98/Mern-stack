@@ -7,7 +7,7 @@ export const getSingleProduct = id => async (dispatch) => {
 
   try {
     dispatch(productRequest());  
-    const {data} =  await axios.get(`/api/v1/product/${id}`);
+    const {data} =  await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/product/${id}`);
     dispatch(productSuccess(data))
 
   } catch (error) {
@@ -26,7 +26,7 @@ export const createReview = reviewData => async (dispatch) => {
                 'Content-type': 'application/json'
             }
         }
-    const {data} =  await axios.put('/api/v1/review', reviewData, config);
+    const {data} =  await axios.put(`${process.env.REACT_APP_API_URL}/api/v1/review`, reviewData, config);
     dispatch(createReviewSuccess(data))
 
   } catch (error) {
